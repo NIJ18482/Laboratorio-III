@@ -20,8 +20,20 @@
 void setup (void);
 /******************************************************************************/
 
-
-
+/************************* RUTINA DE INTERRUPCIÓN *****************************/
+void __interrupt() isr(void){
+    if (INTCONbits.T0IF == 1){
+        INTCONbits.T0IF = 0;
+        TMR0 = 130;
+        if (ADCON0bits.CHS0 == 0){
+        ADCON0bits.CHS0 = 1;
+        }
+        if (ADCON0bits.CHS0 == 1){
+        ADCON0bits.CHS0 = 0;
+        }
+        
+    }}
+/******************************************************************************/
 void main(void) {
     setup();        /************* FUNCIÓN DE CONFIGURACIÓN INICIAL ***********/
     while(1){       /*************** MAIN GLORIUS SPARTAN PROGRAM *************/

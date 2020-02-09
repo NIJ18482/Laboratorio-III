@@ -2631,5 +2631,15 @@ typedef uint16_t uintptr_t;
 
 
 void CONFIG_ADC(void) {
+    ADCON1bits.ADFM = 0;
+    ADCON1bits.VCFG1 = 0;
+    ADCON1bits.VCFG0 = 0;
+    ADCON0bits.ADCS1 = 0;
+    ADCON0bits.ADCS0 = 1;
+    ADCON0bits.CHS3 = 0;
+    ADCON0bits.CHS2 = 0;
+    ADCON0bits.CHS1 = 0;
+    ADCON0bits.CHS0 = 0;
+    ADCON0bits.ADON = 1;
     return;
 }
