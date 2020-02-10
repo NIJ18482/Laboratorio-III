@@ -12,9 +12,10 @@
     #pragma config BOR4V = BOR40V   
     #pragma config WRT = OFF        
     #include <xc.h>
-    #include <stdint.h>
-    #include "ADC.h"
-    #include "DELAYS.h"
+    #include <stdint.h>        /* INCLUSIÓN DE LIBRERÍA DE ANCHO VARS ESTANDAR*/
+    #include "ADC.h"           /* INCLUSIÓN DE MI LIBRERÍA DEL MANEJOD DE ADC */
+    #include "DELAYS.h"        /*  INCLUSIÓN DE MI LIBRERÍA DE DELAYS PATITO  */
+    #include "LCD.h"           /* INCLUSIÓN DE MI LIBRERÍA DEL F*UCKING LCD   */
 /******************************************************************************/
 /************ PROTOCOLO DE FUNCIONES, VARIABLES Y DEMÁS DEFINICIONES **********/
 void setup (void);
@@ -22,6 +23,7 @@ uint8_t cambiante = 0;      /*     VAR DE CONTROL DE CAMBIO DE CANAL ADC      */
 uint8_t eADC      = 0;      /* VAR DE CONTROL DENTRO DEL LOOP PRINCIPAL       */
 uint8_t ADCAN0    = 0;      /* VAR PARA OBTENER EL VALOR DEL 1ER POTENCIÓMETRO*/
 uint8_t ADCAN1    = 0;      /* VAR PARA OBTENER EL VALOR DEL 2O POTENCIÓMETRO */
+
 /******************************************************************************/
 
 /************************* RUTINA DE INTERRUPCIÓN *****************************/
@@ -39,13 +41,21 @@ void __interrupt() isr(void){
 /******************************************************************************/
 void main(void) {
     setup();        /************* FUNCIÓN DE CONFIGURACIÓN INICIAL ***********/
+    INIT_LCD();
+    LCD_CLEAR();
+    LCD_DATO (0b10000000);
+    CONFIG_ADC();
     while(1){       /*************** MAIN GLORIUS SPARTAN PROGRAM *************/
         if (eADC == 1){
             eADC = 0;
             if (cambiante == 0){ADCAN0 = ADRESH; PORTB = ADCAN0;}
             if (cambiante == 1){ADCAN1 = ADRESH; PORTC = ADCAN1;}
             ADCON0bits.GO_DONE = 1;}
-    }
+        
+            
+            
+        }
+    
     return;}
 /*****************************************************************************/
 
@@ -76,7 +86,6 @@ void setup (void){
     TMR0                = 130;/* Valor precargado para obtener 1ms de TMR0    */
 /******************************************************************************/
 /****************** CONFIGURACIÓN DE ADC E INTERRIPCION DE ADC ****************/
-    CONFIG_ADC();
 }
 
 

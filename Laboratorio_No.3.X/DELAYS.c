@@ -14,12 +14,12 @@
 #include <stdint.h>
 /******************************************************************************/
 /* FUNCIÓNES DELAY*/
-void delay_ms(unsigned int dms){
+void delay_ms(unsigned char dms){
     for (int i = 0; i<dms;i++)
     {for (int j = 0; j<255 ;j++){}}}
 /******************************************************************************/
 
-void delay_us(unsigned int ams){
+void delay_us (unsigned char ams){
     for (int j = 0; j<ams;j++){
         asm("NOP");}}
 /******************************************************************************/

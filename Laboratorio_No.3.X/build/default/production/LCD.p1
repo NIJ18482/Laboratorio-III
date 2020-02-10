@@ -1,4 +1,44 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"1670 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1670:     struct {
+[s S61 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S61 . TRISE0 TRISE1 TRISE2 TRISE3 ]
+"1669
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1669: typedef union {
+[u S60 `S61 1 ]
+[n S60 . . ]
+"1677
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1677: extern volatile TRISEbits_t TRISEbits __attribute__((address(0x089)));
+[v _TRISEbits `VS60 ~T0 @X0 0 e@137 ]
+"1602
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"420
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 420:     struct {
+[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S14 . RE0 RE1 RE2 RE3 ]
+"419
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 419: typedef union {
+[u S13 `S14 1 ]
+[n S13 . . ]
+"427
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 427: extern volatile PORTEbits_t PORTEbits __attribute__((address(0x009)));
+[v _PORTEbits `VS13 ~T0 @X0 0 e@9 ]
+"352
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"16 ./DELAYS.h
+[; ;./DELAYS.h: 16: void delay_ms(unsigned char);
+[v _delay_ms `(v ~T0 @X0 0 ef1`uc ]
+"15 ./LCD.h
+[; ;./LCD.h: 15: void lcd_control (uint8_t);
+[v _lcd_control `(v ~T0 @X0 0 ef1`uc ]
+"16
+[; ;./LCD.h: 16: void LCD_PULSE(void);
+[v _LCD_PULSE `(v ~T0 @X0 0 ef ]
+"17 ./DELAYS.h
+[; ;./DELAYS.h: 17: void delay_us(unsigned char);
+[v _delay_us `(v ~T0 @X0 0 ef1`uc ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -233,66 +273,119 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"17 DELAYS.c
-[; ;DELAYS.c: 17: void delay_ms(unsigned char dms){
-[v _delay_ms `(v ~T0 @X0 1 ef1`uc ]
+"18 LCD.c
+[; ;LCD.c: 18: void INIT_LCD(void){
+[v _INIT_LCD `(v ~T0 @X0 1 ef ]
 {
-[e :U _delay_ms ]
-[v _dms `uc ~T0 @X0 1 r1 ]
+[e :U _INIT_LCD ]
 [f ]
-"18
-[; ;DELAYS.c: 18:     for (int i = 0; i<dms;i++)
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $U 142  ]
-[e :U 139 ]
 "19
-[; ;DELAYS.c: 19:     {for (int j = 0; j<255 ;j++){}}}
-{
-{
-[v _j `i ~T0 @X0 1 a ]
-[e = _j -> 0 `i ]
-[e $ < _j -> 255 `i 143  ]
-[e $U 144  ]
-[e :U 143 ]
-{
-}
-[e ++ _j -> 1 `i ]
-[e $ < _j -> 255 `i 143  ]
-[e :U 144 ]
-}
-}
-[e ++ _i -> 1 `i ]
-[e :U 142 ]
-[e $ < _i -> _dms `i 139  ]
-[e :U 140 ]
-}
+[; ;LCD.c: 19:     TRISEbits.TRISE0 = 0;
+[e = . . _TRISEbits 0 0 -> -> 0 `i `uc ]
+"20
+[; ;LCD.c: 20:     TRISEbits.TRISE1 = 0;
+[e = . . _TRISEbits 0 1 -> -> 0 `i `uc ]
+"21
+[; ;LCD.c: 21:     TRISD = 0b00000000;
+[e = _TRISD -> -> 0 `i `uc ]
+"22
+[; ;LCD.c: 22:     PORTEbits.RE0 = 0;
+[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
+"23
+[; ;LCD.c: 23:     PORTEbits.RE1 = 0;
+[e = . . _PORTEbits 0 1 -> -> 0 `i `uc ]
+"24
+[; ;LCD.c: 24:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"25
+[; ;LCD.c: 25:     delay_ms(50);
+[e ( _delay_ms (1 -> -> 50 `i `uc ]
+"26
+[; ;LCD.c: 26:     lcd_control(0x02);
+[e ( _lcd_control (1 -> -> 2 `i `uc ]
+"27
+[; ;LCD.c: 27:     lcd_control(0x38);
+[e ( _lcd_control (1 -> -> 56 `i `uc ]
+"28
+[; ;LCD.c: 28:     lcd_control(0x0C);
+[e ( _lcd_control (1 -> -> 12 `i `uc ]
+"29
+[; ;LCD.c: 29:     lcd_control(0x06);}
+[e ( _lcd_control (1 -> -> 6 `i `uc ]
 [e :UE 138 ]
 }
-"22
-[; ;DELAYS.c: 22: void delay_us (unsigned char ams){
-[v _delay_us `(v ~T0 @X0 1 ef1`uc ]
+"31
+[; ;LCD.c: 31: void lcd_control (uint8_t dato){
+[v _lcd_control `(v ~T0 @X0 1 ef1`uc ]
 {
-[e :U _delay_us ]
-[v _ams `uc ~T0 @X0 1 r1 ]
+[e :U _lcd_control ]
+[v _dato `uc ~T0 @X0 1 r1 ]
 [f ]
-"23
-[; ;DELAYS.c: 23:     for (int j = 0; j<ams;j++){
-{
-[v _j `i ~T0 @X0 1 a ]
-[e = _j -> 0 `i ]
-[e $U 150  ]
-[e :U 147 ]
-{
-"24
-[; ;DELAYS.c: 24:         __asm("NOP");}}
-[; <" NOP ;# ">
+"32
+[; ;LCD.c: 32:     PORTEbits.RE0 = 0;
+[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
+"33
+[; ;LCD.c: 33:     PORTD = dato;
+[e = _PORTD _dato ]
+"34
+[; ;LCD.c: 34:     LCD_PULSE();
+[e ( _LCD_PULSE ..  ]
+"35
+[; ;LCD.c: 35:     delay_ms(2);}
+[e ( _delay_ms (1 -> -> 2 `i `uc ]
+[e :UE 139 ]
 }
-[e ++ _j -> 1 `i ]
-[e :U 150 ]
-[e $ < _j -> _ams `i 147  ]
-[e :U 148 ]
+"37
+[; ;LCD.c: 37: void LCD_PULSE (void){
+[v _LCD_PULSE `(v ~T0 @X0 1 ef ]
+{
+[e :U _LCD_PULSE ]
+[f ]
+"38
+[; ;LCD.c: 38:     PORTEbits.RE1 = 1;
+[e = . . _PORTEbits 0 1 -> -> 1 `i `uc ]
+"39
+[; ;LCD.c: 39:     delay_us(5);
+[e ( _delay_us (1 -> -> 5 `i `uc ]
+"40
+[; ;LCD.c: 40:     PORTEbits.RE1 = 0;
+[e = . . _PORTEbits 0 1 -> -> 0 `i `uc ]
+"41
+[; ;LCD.c: 41:     delay_us(5);}
+[e ( _delay_us (1 -> -> 5 `i `uc ]
+[e :UE 140 ]
 }
-[e :UE 146 ]
+"43
+[; ;LCD.c: 43: void LCD_DATO(uint8_t comando){
+[v _LCD_DATO `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _LCD_DATO ]
+[v _comando `uc ~T0 @X0 1 r1 ]
+[f ]
+"44
+[; ;LCD.c: 44:     PORTEbits.RE0 = 1;
+[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
+"45
+[; ;LCD.c: 45:     PORTD = comando;
+[e = _PORTD _comando ]
+"46
+[; ;LCD.c: 46:     LCD_PULSE();
+[e ( _LCD_PULSE ..  ]
+"47
+[; ;LCD.c: 47:     delay_us(50);
+[e ( _delay_us (1 -> -> 50 `i `uc ]
+"48
+[; ;LCD.c: 48: }
+[e :UE 141 ]
+}
+"50
+[; ;LCD.c: 50: void LCD_CLEAR (void){
+[v _LCD_CLEAR `(v ~T0 @X0 1 ef ]
+{
+[e :U _LCD_CLEAR ]
+[f ]
+"51
+[; ;LCD.c: 51:     lcd_control(0x01);}
+[e ( _lcd_control (1 -> -> 1 `i `uc ]
+[e :UE 142 ]
 }

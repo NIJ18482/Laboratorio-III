@@ -13,7 +13,7 @@
 #define	__DELAYS_H_
 
 #include <xc.h> 
-void delay_ms(unsigned int);
-void delay_us(unsigned int);
+void delay_ms(unsigned char);
+void delay_us(unsigned char);
 #endif	
 
