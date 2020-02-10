@@ -2656,26 +2656,35 @@ void delay_us(unsigned int);
 
 
 void setup (void);
+uint8_t cambiante = 0;
+uint8_t eADC = 0;
+uint8_t ADCAN0 = 0;
+uint8_t ADCAN1 = 0;
 
 
 
 void __attribute__((picinterrupt(("")))) isr(void){
     if (INTCONbits.T0IF == 1){
+        if (cambiante == 0){ADCON0bits.CHS0 = 1;}
+        if (cambiante == 1){ADCON0bits.CHS0 = 0;}
+        cambiante++;
+        if (cambiante > 1){cambiante = 0;}
+        if (ADCON0bits.GO_DONE == 0){eADC = 1;}
         INTCONbits.T0IF = 0;
         TMR0 = 130;
-        if (ADCON0bits.CHS0 == 0){
-        ADCON0bits.CHS0 = 1;
-        }
-        if (ADCON0bits.CHS0 == 1){
-        ADCON0bits.CHS0 = 0;
-        }
-
+        eADC = 1;
     }}
 
 void main(void) {
     setup();
     while(1){
+        if (eADC == 1){
+            eADC = 0;
+            if (cambiante == 0){ADCAN0 = ADRESH;}
+            if (cambiante == 1){}
+            ADCON0bits.GO_DONE = 1;
 
+        }
     }
     return;
 
