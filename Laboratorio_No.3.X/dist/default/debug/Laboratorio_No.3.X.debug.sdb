@@ -17,7 +17,7 @@
 [v _isr isr `II(v  1 e 1 0 ]
 "40
 [v _main main `(v  1 e 1 0 ]
-"53
+"54
 [v _setup setup `(v  1 e 1 0 ]
 "59 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
@@ -119,12 +119,12 @@
 "40
 [v _main main `(v  1 e 1 0 ]
 {
-"49
+"50
 } 0
-"53
+"54
 [v _setup setup `(v  1 e 1 0 ]
 {
-"80
+"81
 } 0
 "15 C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
 [v _CONFIG_ADC CONFIG_ADC `(v  1 e 1 0 ]

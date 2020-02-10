@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Mon Feb 10 01:51:09 2020
+                                                                                               Mon Feb 10 01:38:17 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	16F887
@@ -557,7 +557,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    543  0076                     __ptext1:	
    544 ;; *************** function _setup *****************
    545 ;; Defined at:
-   546 ;;		line 53 in file "main.c"
+   546 ;;		line 54 in file "main.c"
    547 ;; Parameters:    Size  Location     Type
    548 ;;		None
    549 ;; Auto vars:     Size  Location     Type
@@ -593,101 +593,101 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    579                           ; Regs used in _setup: [wreg+status,2+status,0+pclath+cstack]
    580                           
    581                           
-   582                           ;main.c: 55:     TRISA = 0b00000011;
+   582                           ;main.c: 56:     TRISA = 0b00000011;
    583  0076  3003               	movlw	3
    584  0077  1683               	bsf	3,5	;RP0=1, select bank1
    585  0078  1303               	bcf	3,6	;RP1=0, select bank1
    586  0079  0085               	movwf	5	;volatile
    587                           
-   588                           ;main.c: 56:     ANSEL = 0b00000011;
+   588                           ;main.c: 57:     ANSEL = 0b00000011;
    589  007A  3003               	movlw	3
    590  007B  1683               	bsf	3,5	;RP0=1, select bank3
    591  007C  1703               	bsf	3,6	;RP1=1, select bank3
    592  007D  0088               	movwf	8	;volatile
    593  007E                     l685:	
    594                           
-   595                           ;main.c: 57:     ANSELH = 0b00000000;
+   595                           ;main.c: 58:     ANSELH = 0b00000000;
    596  007E  0189               	clrf	9	;volatile
    597  007F                     l687:	
    598                           
-   599                           ;main.c: 58:     TRISB = 0b00000000;
+   599                           ;main.c: 59:     TRISB = 0b00000000;
    600  007F  1683               	bsf	3,5	;RP0=1, select bank1
    601  0080  1303               	bcf	3,6	;RP1=0, select bank1
    602  0081  0186               	clrf	6	;volatile
    603  0082                     l689:	
    604                           
-   605                           ;main.c: 59:     TRISC = 0b00000000;
+   605                           ;main.c: 60:     TRISC = 0b00000000;
    606  0082  0187               	clrf	7	;volatile
    607  0083                     l691:	
    608                           
-   609                           ;main.c: 60:     TRISD = 0b00000000;
+   609                           ;main.c: 61:     TRISD = 0b00000000;
    610  0083  0188               	clrf	8	;volatile
    611  0084                     l693:	
    612                           
-   613                           ;main.c: 61:     TRISE = 0b0000;
+   613                           ;main.c: 62:     TRISE = 0b0000;
    614  0084  0189               	clrf	9	;volatile
    615  0085                     l695:	
    616                           
-   617                           ;main.c: 62:     PORTB = 0b00000000;
+   617                           ;main.c: 63:     PORTB = 0b00000000;
    618  0085  1283               	bcf	3,5	;RP0=0, select bank0
    619  0086  1303               	bcf	3,6	;RP1=0, select bank0
    620  0087  0186               	clrf	6	;volatile
    621  0088                     l697:	
    622                           
-   623                           ;main.c: 63:     PORTC = 0b00000000;
+   623                           ;main.c: 64:     PORTC = 0b00000000;
    624  0088  0187               	clrf	7	;volatile
    625  0089                     l699:	
    626                           
-   627                           ;main.c: 64:     PORTD = 0b00000000;
+   627                           ;main.c: 65:     PORTD = 0b00000000;
    628  0089  0188               	clrf	8	;volatile
    629  008A                     l701:	
    630                           
-   631                           ;main.c: 65:     PORTE = 0b0000;
+   631                           ;main.c: 66:     PORTE = 0b0000;
    632  008A  0189               	clrf	9	;volatile
    633  008B                     l703:	
    634                           
-   635                           ;main.c: 68:     OPTION_REGbits.T0CS = 0;
+   635                           ;main.c: 69:     OPTION_REGbits.T0CS = 0;
    636  008B  1683               	bsf	3,5	;RP0=1, select bank1
    637  008C  1303               	bcf	3,6	;RP1=0, select bank1
    638  008D  1281               	bcf	1,5	;volatile
    639  008E                     l705:	
    640                           
-   641                           ;main.c: 69:     OPTION_REGbits.PSA = 0;
+   641                           ;main.c: 70:     OPTION_REGbits.PSA = 0;
    642  008E  1181               	bcf	1,3	;volatile
    643  008F                     l707:	
    644                           
-   645                           ;main.c: 70:     OPTION_REGbits.PS0 = 0;
+   645                           ;main.c: 71:     OPTION_REGbits.PS0 = 0;
    646  008F  1001               	bcf	1,0	;volatile
    647  0090                     l709:	
    648                           
-   649                           ;main.c: 71:     OPTION_REGbits.PS1 = 1;
+   649                           ;main.c: 72:     OPTION_REGbits.PS1 = 1;
    650  0090  1481               	bsf	1,1	;volatile
    651  0091                     l711:	
    652                           
-   653                           ;main.c: 72:     OPTION_REGbits.PS2 = 0;
+   653                           ;main.c: 73:     OPTION_REGbits.PS2 = 0;
    654  0091  1101               	bcf	1,2	;volatile
    655  0092                     l713:	
    656                           
-   657                           ;main.c: 73:     INTCONbits.T0IE = 1;
+   657                           ;main.c: 74:     INTCONbits.T0IE = 1;
    658  0092  168B               	bsf	11,5	;volatile
    659  0093                     l715:	
    660                           
-   661                           ;main.c: 74:     INTCONbits.T0IF = 0;
+   661                           ;main.c: 75:     INTCONbits.T0IF = 0;
    662  0093  110B               	bcf	11,2	;volatile
    663  0094                     l717:	
    664                           
-   665                           ;main.c: 75:     INTCONbits.GIE = 1;
+   665                           ;main.c: 76:     INTCONbits.GIE = 1;
    666  0094  178B               	bsf	11,7	;volatile
    667  0095                     l719:	
    668                           
-   669                           ;main.c: 76:     TMR0 = 130;
+   669                           ;main.c: 77:     TMR0 = 130;
    670  0095  3082               	movlw	130
    671  0096  1283               	bcf	3,5	;RP0=0, select bank0
    672  0097  1303               	bcf	3,6	;RP1=0, select bank0
    673  0098  0081               	movwf	1	;volatile
    674  0099                     l721:	
    675                           
-   676                           ;main.c: 79:     CONFIG_ADC();
+   676                           ;main.c: 80:     CONFIG_ADC();
    677  0099  120A  118A  209F  120A  118A  	fcall	_CONFIG_ADC
    678  009E                     l68:	
    679  009E  0008               	return
@@ -1039,7 +1039,7 @@ DATA                 0      0       8      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Mon Feb 10 01:51:09 2020
+Symbol Table                                                                                   Mon Feb 10 01:38:17 2020
 
              __CFG_CP$OFF 0000                        l68 009E                        l89 00AD  
                       u60 0054                        u61 0053                        u70 005A  

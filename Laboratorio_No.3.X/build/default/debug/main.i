@@ -2683,6 +2683,7 @@ void main(void) {
             if (cambiante == 0){ADCAN0 = ADRESH; PORTB = ADCAN0;}
             if (cambiante == 1){ADCAN1 = ADRESH; PORTC = ADCAN1;}
             ADCON0bits.GO_DONE = 1;}
+
     }
     return;}
 

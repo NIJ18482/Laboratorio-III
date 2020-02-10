@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "ADC.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,21 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
+# 1 "ADC.c" 2
+# 12 "ADC.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2505,7 +2492,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 14 "main.c" 2
+# 12 "ADC.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
@@ -2640,79 +2627,19 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 15 "main.c" 2
-
-# 1 "./ADC.h" 1
-# 17 "./ADC.h"
-void CONFIG_ADC (void);
-# 16 "main.c" 2
-
-# 1 "./DELAYS.h" 1
-# 16 "./DELAYS.h"
-void delay_ms(unsigned int);
-void delay_us(unsigned int);
-# 17 "main.c" 2
+# 13 "ADC.c" 2
 
 
-
-void setup (void);
-uint8_t cambiante = 0;
-uint8_t eADC = 0;
-uint8_t ADCAN0 = 0;
-uint8_t ADCAN1 = 0;
-
-
-
-void __attribute__((picinterrupt(("")))) isr(void){
-    if (INTCONbits.T0IF == 1){
-        if (cambiante == 0){ADCON0bits.CHS0 = 1;}
-        if (cambiante == 1){ADCON0bits.CHS0 = 0;}
-        cambiante++;
-        if (cambiante > 1){cambiante = 0;}
-        if (ADCON0bits.GO_DONE == 0){eADC = 1;}
-        INTCONbits.T0IF = 0;
-        TMR0 = 130;
-        eADC = 1;
-    }}
-
-void main(void) {
-    setup();
-    while(1){
-        if (eADC == 1){
-            eADC = 0;
-            if (cambiante == 0){ADCAN0 = ADRESH; PORTB = ADCAN0;}
-            if (cambiante == 1){ADCAN1 = ADRESH; PORTC = ADCAN1;}
-            ADCON0bits.GO_DONE = 1;}
-    }
-    return;}
-
-
-
-void setup (void){
-
-    TRISA = 0b00000011;
-    ANSEL = 0b00000011;
-    ANSELH = 0b00000000;
-    TRISB = 0b00000000;
-    TRISC = 0b00000000;
-    TRISD = 0b00000000;
-    TRISE = 0b0000;
-    PORTB = 0b00000000;
-    PORTC = 0b00000000;
-    PORTD = 0b00000000;
-    PORTE = 0b0000;
-
-
-    OPTION_REGbits.T0CS = 0;
-    OPTION_REGbits.PSA = 0;
-    OPTION_REGbits.PS0 = 0;
-    OPTION_REGbits.PS1 = 1;
-    OPTION_REGbits.PS2 = 0;
-    INTCONbits.T0IE = 1;
-    INTCONbits.T0IF = 0;
-    INTCONbits.GIE = 1;
-    TMR0 = 130;
-
-
-    CONFIG_ADC();
+void CONFIG_ADC(void) {
+    ADCON1bits.ADFM = 0;
+    ADCON1bits.VCFG1 = 0;
+    ADCON1bits.VCFG0 = 0;
+    ADCON0bits.ADCS1 = 0;
+    ADCON0bits.ADCS0 = 1;
+    ADCON0bits.CHS3 = 0;
+    ADCON0bits.CHS2 = 0;
+    ADCON0bits.CHS1 = 0;
+    ADCON0bits.CHS0 = 0;
+    ADCON0bits.ADON = 1;
+    return;
 }

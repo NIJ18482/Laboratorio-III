@@ -36,7 +36,7 @@ void __interrupt() isr(void){
         TMR0 = 130;
         eADC = 1;
     }}
-/****************************************** ************************************/
+/******************************************************************************/
 void main(void) {
     setup();        /************* FUNCIÓN DE CONFIGURACIÓN INICIAL ***********/
     while(1){       /*************** MAIN GLORIUS SPARTAN PROGRAM *************/
@@ -45,12 +45,9 @@ void main(void) {
             if (cambiante == 0){ADCAN0 = ADRESH; PORTB = ADCAN0;}
             if (cambiante == 1){ADCAN1 = ADRESH; PORTC = ADCAN1;}
             ADCON0bits.GO_DONE = 1;}
-    
     }
-    
-    return;   
- /*****************************************************************************/
-}
+    return;}
+/*****************************************************************************/
 
 /*************************** RUTINA DE CONFIGURACION  *************************/
 void setup (void){
@@ -75,6 +72,7 @@ void setup (void){
     OPTION_REGbits.PS2  = 0; /* PS2   PS1   PS0                               */
     INTCONbits.T0IE     = 1; /* TMR0 INTERRUPT ENABLE-> 0 = nope, 1 = yes     */
     INTCONbits.T0IF     = 0; /* TMR0 INTERRUPT FLAG                           */
+    INTCONbits.GIE      = 1; /* INTERRUPCIONES GLOBALES ACTIVADAS             */
     TMR0                = 130;/* Valor precargado para obtener 1ms de TMR0    */
 /******************************************************************************/
 /****************** CONFIGURACIÓN DE ADC E INTERRIPCION DE ADC ****************/
