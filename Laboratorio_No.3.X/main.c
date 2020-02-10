@@ -18,26 +18,35 @@
 /******************************************************************************/
 /************ PROTOCOLO DE FUNCIONES, VARIABLES Y DEMÁS DEFINICIONES **********/
 void setup (void);
+uint8_t cambiante = 0;      /* VAR DE CONTROL DE CAMBIO DE CANAL ADC          */
+uint8_t eADC      = 0;      /* VAR DE CONTROL DENTRO DEL LOOP PRINCIPAL       */
+uint8_t ADCAN0    = 0;      /* VAR PARA OBTENER EL VALOR DEL 1ER POTENCIÓMETRO*/
+uint8_t ADCAN1    = 0;      /* VAR PARA OBTENER EL VALOR DEL 2O POTENCIÓMETRO */
 /******************************************************************************/
 
 /************************* RUTINA DE INTERRUPCIÓN *****************************/
 void __interrupt() isr(void){
-    if (INTCONbits.T0IF == 1){
+    if (INTCONbits.T0IF == 1){ /*SI EL TMR0 HA SUFRIDO DESBORDE, T - T0 = 1mS */
+        if (cambiante == 0){ADCON0bits.CHS0 = 1;} /*ESTE ARREGLO DE IFS, DEJA */
+        if (cambiante == 1){ADCON0bits.CHS0 = 0;} /*CAMBIAR DE CANAL CADA 1ms */
+        cambiante++;                              /*LA VAR CONTROL QUE CAMBIA */
+        if (cambiante > 1){cambiante = 0;}
+        if (ADCON0bits.GO_DONE == 0){eADC = 1;}
         INTCONbits.T0IF = 0;
         TMR0 = 130;
-        if (ADCON0bits.CHS0 == 0){
-        ADCON0bits.CHS0 = 1;
-        }
-        if (ADCON0bits.CHS0 == 1){
-        ADCON0bits.CHS0 = 0;
-        }
-        
+        eADC = 1;
     }}
-/******************************************************************************/
+/****************************************** ************************************/
 void main(void) {
     setup();        /************* FUNCIÓN DE CONFIGURACIÓN INICIAL ***********/
     while(1){       /*************** MAIN GLORIUS SPARTAN PROGRAM *************/
+        if (eADC == 1){
+            eADC = 0;
+            if (cambiante == 0){ADCAN0 = ADRESH;}
+            if (cambiante == 1){}
+            ADCON0bits.GO_DONE = 1;
         
+        }
     }
     return;   
  /*****************************************************************************/
