@@ -12,9 +12,12 @@
 
 void INIT_LCD(void);
 void LCD_CLEAR(void);
-void lcd_control (uint8_t);
+void LCD_CONTROL (uint8_t);
 void LCD_PULSE(void);
 void LCD_DATO(uint8_t);
+void LCD_PRINT(char*);
+void LCD_PRINT_WP (int,int,char*);   
+void LCD_RH (void);
 
 
 #endif

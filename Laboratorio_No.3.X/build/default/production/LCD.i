@@ -2637,9 +2637,12 @@ typedef uint16_t uintptr_t;
 
 void INIT_LCD(void);
 void LCD_CLEAR(void);
-void lcd_control (uint8_t);
+void LCD_CONTROL (uint8_t);
 void LCD_PULSE(void);
 void LCD_DATO(uint8_t);
+void LCD_PRINT(char*);
+void LCD_PRINT_WP (int,int,char*);
+void LCD_RH (void);
 # 13 "LCD.c" 2
 
 # 1 "./DELAYS.h" 1
@@ -2659,12 +2662,12 @@ void INIT_LCD(void){
     PORTEbits.RE1 = 0;
     PORTD = 0;
     delay_ms(50);
-    lcd_control(0x02);
-    lcd_control(0x38);
-    lcd_control(0x0C);
-    lcd_control(0x06);}
+    LCD_CONTROL(0x02);
+    LCD_CONTROL(0x38);
+    LCD_CONTROL(0x0C);
+    LCD_CONTROL(0x06);}
 
-void lcd_control (uint8_t dato){
+void LCD_CONTROL (uint8_t dato){
     PORTEbits.RE0 = 0;
     PORTD = dato;
     LCD_PULSE();
@@ -2684,4 +2687,27 @@ void LCD_DATO(uint8_t comando){
 }
 
 void LCD_CLEAR (void){
-    lcd_control(0x01);}
+    LCD_CONTROL(0x01);}
+
+
+void LCD_PRINT(char*data){
+    while(*data){
+        LCD_DATO (*data);
+        data++;}}
+
+void LCD_RH(void){LCD_CONTROL(0x02);}
+
+void LCD_PRINT_WP(int x, int y, char*frase){
+    char location;
+    switch(y){
+        case 1:
+            location = 0x80 + x;
+            break;
+        case 2:
+            location = 0xC0 + x;
+            break;
+        default:
+            location = 0x80 + x;}
+    LCD_CONTROL(location);
+    LCD_PRINT(frase);
+}

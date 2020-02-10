@@ -43,19 +43,27 @@ void main(void) {
     setup();        /************* FUNCIÓN DE CONFIGURACIÓN INICIAL ***********/
     INIT_LCD();
     LCD_CLEAR();
-    LCD_DATO (0b10000000);
+    LCD_RH();
+    LCD_PRINT_WP(0,1,"LABORATORIO No.3");
+    delay_ms(150);
+    LCD_PRINT_WP(0,2,"Luis N. 18482UVG");
+    delay_ms(150);
+    LCD_CLEAR();
+    LCD_RH();
+    LCD_PRINT_WP(0,1,"MANEJO PANEL LCD");
+    delay_ms(150);
+    LCD_PRINT_WP(0,2,"-MPLABX-XC8-PIC-");
+    delay_ms(150);
+    
     CONFIG_ADC();
     while(1){       /*************** MAIN GLORIUS SPARTAN PROGRAM *************/
         if (eADC == 1){
             eADC = 0;
             if (cambiante == 0){ADCAN0 = ADRESH; PORTB = ADCAN0;}
             if (cambiante == 1){ADCAN1 = ADRESH; PORTC = ADCAN1;}
-            ADCON0bits.GO_DONE = 1;}
-        
-            
+            ADCON0bits.GO_DONE = 1;}      
             
         }
-    
     return;}
 /*****************************************************************************/
 

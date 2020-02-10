@@ -2661,9 +2661,12 @@ void delay_us(unsigned char);
 
 void INIT_LCD(void);
 void LCD_CLEAR(void);
-void lcd_control (uint8_t);
+void LCD_CONTROL (uint8_t);
 void LCD_PULSE(void);
 void LCD_DATO(uint8_t);
+void LCD_PRINT(char*);
+void LCD_PRINT_WP (int,int,char*);
+void LCD_RH (void);
 # 18 "main.c" 2
 
 
@@ -2693,7 +2696,18 @@ void main(void) {
     setup();
     INIT_LCD();
     LCD_CLEAR();
-    LCD_DATO (0b10000000);
+    LCD_RH();
+    LCD_PRINT_WP(0,1,"LABORATORIO No.3");
+    delay_ms(150);
+    LCD_PRINT_WP(0,2,"Luis N. 18482UVG");
+    delay_ms(150);
+    LCD_CLEAR();
+    LCD_RH();
+    LCD_PRINT_WP(0,1,"MANEJO PANEL LCD");
+    delay_ms(150);
+    LCD_PRINT_WP(0,2,"-MPLABX-XC8-PIC-");
+    delay_ms(150);
+
     CONFIG_ADC();
     while(1){
         if (eADC == 1){
@@ -2702,10 +2716,7 @@ void main(void) {
             if (cambiante == 1){ADCAN1 = ADRESH; PORTC = ADCAN1;}
             ADCON0bits.GO_DONE = 1;}
 
-
-
         }
-
     return;}
 
 
