@@ -10,7 +10,7 @@ _isr 17 0 CODE 0
 _TMR0 1 0 ABS 0
 _eADC 72 0 COMMON 1
 __CFG_BOR4V$BOR40V 0 0 ABS 0
-_main 72 0 CODE 0
+_main 4A 0 CODE 0
 ___sp 0 0 STACK 2
 btemp 7E 0 ABS 0
 start C 0 CODE 0
@@ -32,8 +32,9 @@ __Lconfig 2007 0 CONFIG 0
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
 __size_of_isr 0 0 ABS 0
-_setup 4A 0 CODE 0
+_setup 76 0 CODE 0
 _ADCAN0 71 0 COMMON 1
+_ADCAN1 70 0 COMMON 1
 __Hfunctab 0 0 ENTRY 0
 __Lfunctab 0 0 ENTRY 0
 __Hcommon 0 0 ABS 0
@@ -43,7 +44,7 @@ __Leeprom_data 0 0 EEDATA 3
 ___int_sp 0 0 STACK 2
 _ANSELH 189 0 ABS 0
 _ADRESH 1E 0 ABS 0
-__end_of_CONFIG_ADC 9E 0 CODE 0
+__end_of_CONFIG_ADC AD 0 CODE 0
 __Habs1 0 0 ABS 0
 __Labs1 0 0 ABS 0
 __Hsfr0 0 0 ABS 0
@@ -61,7 +62,7 @@ _cambiante 73 0 COMMON 1
 saved_w 7E 0 ABS 0
 __Hinit C 0 CODE 0
 __Linit C 0 CODE 0
-__end_of_main 8F 0 CODE 0
+__end_of_main 76 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 end_of_initialization 13 0 CODE 0
@@ -79,8 +80,8 @@ __Lbank3 0 0 ABS 0
 ___latbits 2 0 ABS 0
 __Hpowerup 0 0 CODE 0
 __Lpowerup 0 0 CODE 0
-__ptext1 4A 0 CODE 0
-__ptext2 8F 0 CODE 0
+__ptext1 76 0 CODE 0
+__ptext2 9E 0 CODE 0
 __ptext3 17 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
@@ -115,7 +116,7 @@ __pbssCOMMON 70 0 COMMON 1
 _INTCONbits B 0 ABS 0
 __Hend_init F 0 CODE 0
 __Lend_init C 0 CODE 0
-__end_of_setup 72 0 CODE 0
+__end_of_setup 9E 0 CODE 0
 __Hreset_vec 3 0 CODE 0
 __Lreset_vec 0 0 CODE 0
 intlevel0 0 0 ENTRY 0
@@ -134,72 +135,72 @@ start_initialization F 0 CODE 0
 __Hmaintext 0 0 ABS 0
 __Lmaintext 0 0 ABS 0
 __CFG_IESO$OFF 0 0 ABS 0
-__pmaintext 72 0 CODE 0
+__pmaintext 4A 0 CODE 0
 _OPTION_REGbits 81 0 ABS 0
 __initialization F 0 CODE 0
-_CONFIG_ADC 8F 0 CODE 0
+_CONFIG_ADC 9E 0 CODE 0
 __CFG_CP$OFF 0 0 ABS 0
 __CFG_LVP$OFF 0 0 ABS 0
 %segments
 reset_vec 0 5 CODE 0 0
-intentry 8 13B CODE 8 0
+intentry 8 159 CODE 8 0
 config 400E 4011 CONFIG 400E 0
 bssCOMMON 70 77 COMMON 70 1
 %locals
 dist/default/production\Laboratorio_No.3.X.production.o
-C:\Users\LJNC\AppData\Local\Temp\s3kk.s
-784 F 0 CODE 0
-787 F 0 CODE 0
-807 F 0 CODE 0
-808 10 0 CODE 0
-809 11 0 CODE 0
-810 12 0 CODE 0
-816 13 0 CODE 0
-818 13 0 CODE 0
-819 14 0 CODE 0
+C:\Users\LJNC\AppData\Local\Temp\s4u4.s
+785 F 0 CODE 0
+788 F 0 CODE 0
+808 F 0 CODE 0
+809 10 0 CODE 0
+810 11 0 CODE 0
+811 12 0 CODE 0
+817 13 0 CODE 0
+819 13 0 CODE 0
+820 14 0 CODE 0
 main.c
-40 72 0 CODE 0
-41 72 0 CODE 0
-43 77 0 CODE 0
-44 7C 0 CODE 0
-45 7D 0 CODE 0
-46 88 0 CODE 0
-47 88 0 CODE 0
-56 4A 0 CODE 0
-58 4A 0 CODE 0
-59 4E 0 CODE 0
-60 52 0 CODE 0
-61 53 0 CODE 0
-62 56 0 CODE 0
-63 57 0 CODE 0
-64 58 0 CODE 0
-65 59 0 CODE 0
-66 5C 0 CODE 0
-67 5D 0 CODE 0
-68 5E 0 CODE 0
-71 5F 0 CODE 0
-72 62 0 CODE 0
-73 63 0 CODE 0
-74 64 0 CODE 0
-75 65 0 CODE 0
-76 66 0 CODE 0
-77 67 0 CODE 0
-78 68 0 CODE 0
-81 6C 0 CODE 0
-82 71 0 CODE 0
+40 4A 0 CODE 0
+41 4A 0 CODE 0
+43 4F 0 CODE 0
+44 54 0 CODE 0
+45 55 0 CODE 0
+46 62 0 CODE 0
+47 6F 0 CODE 0
+56 76 0 CODE 0
+58 76 0 CODE 0
+59 7A 0 CODE 0
+60 7E 0 CODE 0
+61 7F 0 CODE 0
+62 82 0 CODE 0
+63 83 0 CODE 0
+64 84 0 CODE 0
+65 85 0 CODE 0
+66 88 0 CODE 0
+67 89 0 CODE 0
+68 8A 0 CODE 0
+71 8B 0 CODE 0
+72 8E 0 CODE 0
+73 8F 0 CODE 0
+74 90 0 CODE 0
+75 91 0 CODE 0
+76 92 0 CODE 0
+77 93 0 CODE 0
+78 94 0 CODE 0
+81 98 0 CODE 0
+82 9D 0 CODE 0
 ADC.c
-15 8F 0 CODE 0
-16 8F 0 CODE 0
-17 92 0 CODE 0
-18 93 0 CODE 0
-19 94 0 CODE 0
-20 97 0 CODE 0
-21 98 0 CODE 0
-22 99 0 CODE 0
-23 9A 0 CODE 0
-24 9B 0 CODE 0
-25 9C 0 CODE 0
-27 9D 0 CODE 0
+15 9E 0 CODE 0
+16 9E 0 CODE 0
+17 A1 0 CODE 0
+18 A2 0 CODE 0
+19 A3 0 CODE 0
+20 A6 0 CODE 0
+21 A7 0 CODE 0
+22 A8 0 CODE 0
+23 A9 0 CODE 0
+24 AA 0 CODE 0
+25 AB 0 CODE 0
+27 AC 0 CODE 0
 main.c
 28 17 0 CODE 0
 29 17 0 CODE 0

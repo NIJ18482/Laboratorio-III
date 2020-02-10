@@ -2680,12 +2680,12 @@ void main(void) {
     while(1){
         if (eADC == 1){
             eADC = 0;
-            if (cambiante == 0){ADCAN0 = ADRESH;}
-            if (cambiante == 1){}
-            ADCON0bits.GO_DONE = 1;
+            if (cambiante == 0){ADCAN0 = ADRESH; PORTB = ADCAN0;}
+            if (cambiante == 1){ADCAN1 = ADRESH; PORTC = ADCAN1;}
+            ADCON0bits.GO_DONE = 1;}
 
-        }
     }
+
     return;
 
 }

@@ -18,7 +18,7 @@
 /******************************************************************************/
 /************ PROTOCOLO DE FUNCIONES, VARIABLES Y DEMÁS DEFINICIONES **********/
 void setup (void);
-uint8_t cambiante = 0;      /* VAR DE CONTROL DE CAMBIO DE CANAL ADC          */
+uint8_t cambiante = 0;      /*     VAR DE CONTROL DE CAMBIO DE CANAL ADC      */
 uint8_t eADC      = 0;      /* VAR DE CONTROL DENTRO DEL LOOP PRINCIPAL       */
 uint8_t ADCAN0    = 0;      /* VAR PARA OBTENER EL VALOR DEL 1ER POTENCIÓMETRO*/
 uint8_t ADCAN1    = 0;      /* VAR PARA OBTENER EL VALOR DEL 2O POTENCIÓMETRO */
@@ -42,12 +42,12 @@ void main(void) {
     while(1){       /*************** MAIN GLORIUS SPARTAN PROGRAM *************/
         if (eADC == 1){
             eADC = 0;
-            if (cambiante == 0){ADCAN0 = ADRESH;}
-            if (cambiante == 1){}
-            ADCON0bits.GO_DONE = 1;
-        
-        }
+            if (cambiante == 0){ADCAN0 = ADRESH; PORTB = ADCAN0;}
+            if (cambiante == 1){ADCAN1 = ADRESH; PORTC = ADCAN1;}
+            ADCON0bits.GO_DONE = 1;}
+    
     }
+    
     return;   
  /*****************************************************************************/
 }

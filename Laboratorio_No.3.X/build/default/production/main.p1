@@ -49,6 +49,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1238 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
 [v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
+"228
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"290
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 "1416
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
@@ -70,12 +76,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1664
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1664: extern volatile unsigned char TRISE __attribute__((address(0x089)));
 [v _TRISE `Vuc ~T0 @X0 0 e@137 ]
-"228
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"290
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
-[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 "352
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
@@ -461,27 +461,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 44:             eADC = 0;
 [e = _eADC -> -> 0 `i `uc ]
 "45
-[; ;main.c: 45:             if (cambiante == 0){ADCAN0 = ADRESH;}
+[; ;main.c: 45:             if (cambiante == 0){ADCAN0 = ADRESH; PORTB = ADCAN0;}
 [e $ ! == -> _cambiante `i -> 0 `i 149  ]
 {
 [e = _ADCAN0 _ADRESH ]
+[e = _PORTB _ADCAN0 ]
 }
 [e :U 149 ]
 "46
-[; ;main.c: 46:             if (cambiante == 1){}
+[; ;main.c: 46:             if (cambiante == 1){ADCAN1 = ADRESH; PORTC = ADCAN1;}
 [e $ ! == -> _cambiante `i -> 1 `i 150  ]
 {
+[e = _ADCAN1 _ADRESH ]
+[e = _PORTC _ADCAN1 ]
 }
 [e :U 150 ]
 "47
-[; ;main.c: 47:             ADCON0bits.GO_DONE = 1;
+[; ;main.c: 47:             ADCON0bits.GO_DONE = 1;}
 [e = . . _ADCON0bits 3 1 -> -> 1 `i `uc ]
-"49
-[; ;main.c: 49:         }
 }
 [e :U 148 ]
-"50
-[; ;main.c: 50:     }
+"49
+[; ;main.c: 49:     }
 }
 [e :U 145 ]
 [e $U 146  ]

@@ -11,16 +11,16 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\LJNC\AppData\Local\Temp\s3kk.o
+$C:\Users\LJNC\AppData\Local\Temp\s4u4.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 0 2007 2007 2 2
 $dist/default/production\Laboratorio_No.3.X.production.o
 cinit CODE 0 F F 8 2
-text1 CODE 0 4A 4A 28 2
-text2 CODE 0 8F 8F F 2
+text1 CODE 0 76 76 28 2
+text2 CODE 0 9E 9E F 2
 text3 CODE 0 17 17 33 2
-maintext CODE 0 72 72 1D 2
+maintext CODE 0 4A 4A 2C 2
 cstackCOMMON COMMON 1 74 74 4 1
 intentry CODE 0 4 4 8 2
 bssCOMMON COMMON 1 70 70 4 1
@@ -39,13 +39,13 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 9E-1FFF 2
+CONST AD-1FFF 2
 ENTRY 3-3 2
-ENTRY 9E-1FFF 2
+ENTRY AD-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 9E-1FFF 2
+CODE AD-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -53,9 +53,9 @@ SFR3 180-18F 1
 COMMON 78-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 9E-1FFF 2
+STRCODE AD-1FFF 2
 STRING 3-3 2
-STRING 9E-1FFF 2
+STRING AD-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -70,15 +70,15 @@ STRING 9E-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Laboratorio_No.3.X.production.o
-F cinit CODE >784:C:\Users\LJNC\AppData\Local\Temp\s3kk.s
-F cinit CODE >787:C:\Users\LJNC\AppData\Local\Temp\s3kk.s
-F cinit CODE >807:C:\Users\LJNC\AppData\Local\Temp\s3kk.s
-10 cinit CODE >808:C:\Users\LJNC\AppData\Local\Temp\s3kk.s
-11 cinit CODE >809:C:\Users\LJNC\AppData\Local\Temp\s3kk.s
-12 cinit CODE >810:C:\Users\LJNC\AppData\Local\Temp\s3kk.s
-13 cinit CODE >816:C:\Users\LJNC\AppData\Local\Temp\s3kk.s
-13 cinit CODE >818:C:\Users\LJNC\AppData\Local\Temp\s3kk.s
-14 cinit CODE >819:C:\Users\LJNC\AppData\Local\Temp\s3kk.s
+F cinit CODE >785:C:\Users\LJNC\AppData\Local\Temp\s4u4.s
+F cinit CODE >788:C:\Users\LJNC\AppData\Local\Temp\s4u4.s
+F cinit CODE >808:C:\Users\LJNC\AppData\Local\Temp\s4u4.s
+10 cinit CODE >809:C:\Users\LJNC\AppData\Local\Temp\s4u4.s
+11 cinit CODE >810:C:\Users\LJNC\AppData\Local\Temp\s4u4.s
+12 cinit CODE >811:C:\Users\LJNC\AppData\Local\Temp\s4u4.s
+13 cinit CODE >817:C:\Users\LJNC\AppData\Local\Temp\s4u4.s
+13 cinit CODE >819:C:\Users\LJNC\AppData\Local\Temp\s4u4.s
+14 cinit CODE >820:C:\Users\LJNC\AppData\Local\Temp\s4u4.s
 4 intentry CODE >28:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
 17 text3 CODE >28:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
 17 text3 CODE >29:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
@@ -91,47 +91,47 @@ F cinit CODE >807:C:\Users\LJNC\AppData\Local\Temp\s3kk.s
 3F text3 CODE >36:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
 41 text3 CODE >37:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
 43 text3 CODE >38:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-8F text2 CODE >15:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
-8F text2 CODE >16:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
-92 text2 CODE >17:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
-93 text2 CODE >18:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
-94 text2 CODE >19:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
-97 text2 CODE >20:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
-98 text2 CODE >21:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
-99 text2 CODE >22:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
-9A text2 CODE >23:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
-9B text2 CODE >24:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
-9C text2 CODE >25:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
-9D text2 CODE >27:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
-4A text1 CODE >56:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-4A text1 CODE >58:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-4E text1 CODE >59:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-52 text1 CODE >60:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-53 text1 CODE >61:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-56 text1 CODE >62:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-57 text1 CODE >63:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-58 text1 CODE >64:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-59 text1 CODE >65:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-5C text1 CODE >66:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-5D text1 CODE >67:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-5E text1 CODE >68:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-5F text1 CODE >71:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-62 text1 CODE >72:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-63 text1 CODE >73:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-64 text1 CODE >74:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-65 text1 CODE >75:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-66 text1 CODE >76:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-67 text1 CODE >77:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-68 text1 CODE >78:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-6C text1 CODE >81:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-71 text1 CODE >82:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-72 maintext CODE >40:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-72 maintext CODE >41:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-77 maintext CODE >43:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-7C maintext CODE >44:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-7D maintext CODE >45:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-88 maintext CODE >46:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
-88 maintext CODE >47:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+9E text2 CODE >15:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
+9E text2 CODE >16:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
+A1 text2 CODE >17:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
+A2 text2 CODE >18:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
+A3 text2 CODE >19:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
+A6 text2 CODE >20:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
+A7 text2 CODE >21:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
+A8 text2 CODE >22:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
+A9 text2 CODE >23:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
+AA text2 CODE >24:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
+AB text2 CODE >25:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
+AC text2 CODE >27:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
+76 text1 CODE >56:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+76 text1 CODE >58:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+7A text1 CODE >59:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+7E text1 CODE >60:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+7F text1 CODE >61:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+82 text1 CODE >62:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+83 text1 CODE >63:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+84 text1 CODE >64:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+85 text1 CODE >65:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+88 text1 CODE >66:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+89 text1 CODE >67:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+8A text1 CODE >68:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+8B text1 CODE >71:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+8E text1 CODE >72:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+8F text1 CODE >73:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+90 text1 CODE >74:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+91 text1 CODE >75:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+92 text1 CODE >76:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+93 text1 CODE >77:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+94 text1 CODE >78:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+98 text1 CODE >81:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+9D text1 CODE >82:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+4A maintext CODE >40:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+4A maintext CODE >41:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+4F maintext CODE >43:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+54 maintext CODE >44:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+55 maintext CODE >45:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+62 maintext CODE >46:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+6F maintext CODE >47:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -153,39 +153,40 @@ __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _TMR0 1 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\LJNC\AppData\Local\Temp\s3kk.o
+___sp 0 0 STACK 2 stack C:\Users\LJNC\AppData\Local\Temp\s4u4.o
 _eADC 72 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_No.3.X.production.o
-_main E4 0 CODE 0 maintext dist/default/production\Laboratorio_No.3.X.production.o
+_main 94 0 CODE 0 maintext dist/default/production\Laboratorio_No.3.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
-start 18 0 CODE 0 init C:\Users\LJNC\AppData\Local\Temp\s3kk.o
+start 18 0 CODE 0 init C:\Users\LJNC\AppData\Local\Temp\s4u4.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OPTION_REGbits 81 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-_CONFIG_ADC 11E 0 CODE 0 text2 dist/default/production\Laboratorio_No.3.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\s3kk.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\s3kk.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\s3kk.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\s3kk.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\s3kk.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\s3kk.o
+_CONFIG_ADC 13C 0 CODE 0 text2 dist/default/production\Laboratorio_No.3.X.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\s4u4.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\s4u4.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\s4u4.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\s4u4.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\s4u4.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\s4u4.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 _ADCAN0 71 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_No.3.X.production.o
+_ADCAN1 70 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_No.3.X.production.o
 _ADRESH 1E 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-__end_of_CONFIG_ADC 13C 0 CODE 0 text2 dist/default/production\Laboratorio_No.3.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\LJNC\AppData\Local\Temp\s3kk.o
-___stacklo 0 0 ABS 0 - C:\Users\LJNC\AppData\Local\Temp\s3kk.o
+__end_of_CONFIG_ADC 15A 0 CODE 0 text2 dist/default/production\Laboratorio_No.3.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\LJNC\AppData\Local\Temp\s4u4.o
+___stacklo 0 0 ABS 0 - C:\Users\LJNC\AppData\Local\Temp\s4u4.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\Laboratorio_No.3.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\LJNC\AppData\Local\Temp\s3kk.o
+___int_sp 0 0 STACK 2 stack C:\Users\LJNC\AppData\Local\Temp\s4u4.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -231,9 +232,9 @@ saved_w 7E 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 __end_of_isr 94 0 CODE 0 text3 dist/default/production\Laboratorio_No.3.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\LJNC\AppData\Local\Temp\s3kk.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\LJNC\AppData\Local\Temp\s4u4.o
 __size_of_CONFIG_ADC 0 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
-__pmaintext E4 0 CODE 0 maintext dist/default/production\Laboratorio_No.3.X.production.o
+__pmaintext 94 0 CODE 0 maintext dist/default/production\Laboratorio_No.3.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
@@ -252,8 +253,8 @@ end_of_initialization 26 0 CODE 0 cinit dist/default/production\Laboratorio_No.3
 __Hintentry 18 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 6 0 CODE 0 reset_vec -
-__ptext1 94 0 CODE 0 text1 dist/default/production\Laboratorio_No.3.X.production.o
-__ptext2 11E 0 CODE 0 text2 dist/default/production\Laboratorio_No.3.X.production.o
+__ptext1 EC 0 CODE 0 text1 dist/default/production\Laboratorio_No.3.X.production.o
+__ptext2 13C 0 CODE 0 text2 dist/default/production\Laboratorio_No.3.X.production.o
 __ptext3 2E 0 CODE 0 text3 dist/default/production\Laboratorio_No.3.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
@@ -263,7 +264,7 @@ __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 74 0 COMMON 1 cstackCOMMON dist/default/production\Laboratorio_No.3.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
-__end_of_main 11E 0 CODE 0 maintext dist/default/production\Laboratorio_No.3.X.production.o
+__end_of_main EC 0 CODE 0 maintext dist/default/production\Laboratorio_No.3.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 _PORTC 7 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
@@ -274,12 +275,12 @@ _TRISB 86 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 _TRISE 89 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
-__end_of_setup E4 0 CODE 0 text1 dist/default/production\Laboratorio_No.3.X.production.o
+__end_of_setup 13C 0 CODE 0 text1 dist/default/production\Laboratorio_No.3.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\Laboratorio_No.3.X.production.o
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
-_setup 94 0 CODE 0 text1 dist/default/production\Laboratorio_No.3.X.production.o
+_setup EC 0 CODE 0 text1 dist/default/production\Laboratorio_No.3.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\Laboratorio_No.3.X.production.o
 __size_of_isr 0 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\Laboratorio_No.3.X.production.o
@@ -311,7 +312,7 @@ _cambiante 73 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_No.3.X.pr
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-intentry 0 4 8 9A 2
+intentry 0 4 8 A9 2
 reset_vec 0 0 0 3 2
 bssCOMMON 1 70 70 8 1
 config 0 2007 400E 2 2

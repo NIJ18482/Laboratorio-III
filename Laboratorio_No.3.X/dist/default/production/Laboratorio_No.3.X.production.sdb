@@ -114,6 +114,8 @@
 [v _eADC eADC `uc  1 e 1 0 ]
 "23
 [v _ADCAN0 ADCAN0 `uc  1 e 1 0 ]
+"24
+[v _ADCAN1 ADCAN1 `uc  1 e 1 0 ]
 "40
 [v _main main `(v  1 e 1 0 ]
 {
