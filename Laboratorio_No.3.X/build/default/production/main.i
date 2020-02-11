@@ -2667,6 +2667,7 @@ void LCD_DATO(uint8_t);
 void LCD_PRINT(char*);
 void LCD_PRINT_WP (int,int,char*);
 void LCD_RH (void);
+void VAL(uint8_t,uint8_t);
 # 18 "main.c" 2
 
 
@@ -2676,7 +2677,8 @@ uint8_t cambiante = 0;
 uint8_t eADC = 0;
 uint8_t ADCAN0 = 0;
 uint8_t ADCAN1 = 0;
-
+uint8_t sensor = 0;
+uint8_t sen = 0;
 
 
 
@@ -2685,6 +2687,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
         if (cambiante == 0){ADCON0bits.CHS0 = 1;}
         if (cambiante == 1){ADCON0bits.CHS0 = 0;}
         cambiante++;
+        sensor++;
         if (cambiante > 1){cambiante = 0;}
         if (ADCON0bits.GO_DONE == 0){eADC = 1;}
         INTCONbits.T0IF = 0;
@@ -2707,17 +2710,25 @@ void main(void) {
     delay_ms(150);
     LCD_PRINT_WP(0,2,"-MPLABX-XC8-PIC-");
     delay_ms(150);
-
+    LCD_CLEAR();
+    LCD_RH();
+    LCD_PRINT_WP(0,1," SEN.1 SEN.2 CT ");
+    LCD_PRINT_WP(0,2,"-0.00V-0.00V-000");
     CONFIG_ADC();
     while(1){
+
         if (eADC == 1){
             eADC = 0;
-            if (cambiante == 0){ADCAN0 = ADRESH; PORTB = ADCAN0;}
-            if (cambiante == 1){ADCAN1 = ADRESH; PORTC = ADCAN1;}
+            if (cambiante == 0){ADCAN0 = ADRESH;}
+            if (cambiante == 1){ADCAN1 = ADRESH;}
             ADCON0bits.GO_DONE = 1;}
-
-        }
-    return;}
+        if (sensor == 20){
+            if (sen == 0){VAL(ADCAN0,0);}
+            if (sen == 1){VAL(ADCAN1,1);}
+            sen++;
+            if (sen > 1){sen = 0;}
+            sensor = 0;}
+    }return;}
 
 
 

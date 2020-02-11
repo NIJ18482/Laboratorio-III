@@ -18,7 +18,7 @@ void LCD_DATO(uint8_t);
 void LCD_PRINT(char*);
 void LCD_PRINT_WP (int,int,char*);   
 void LCD_RH (void);
-
+void VAL(uint8_t,uint8_t);
 
 #endif
 
