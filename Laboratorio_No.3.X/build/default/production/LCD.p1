@@ -480,143 +480,296 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _column `uc ~T0 @X0 1 r2 ]
 [f ]
 "73
-[; ;LCD.c: 73:     uint8_t unidades = 0;
-[v _unidades `uc ~T0 @X0 1 a ]
-[e = _unidades -> -> 0 `i `uc ]
+[; ;LCD.c: 73:     if (result>=250){result = 250;}
+[e $ ! >= -> _result `i -> 250 `i 159  ]
+{
+[e = _result -> -> 250 `i `uc ]
+}
+[e :U 159 ]
 "74
-[; ;LCD.c: 74:     unidades = (result - (result % 51))/51;
-[e = _unidades -> / - -> _result `i % -> _result `i -> 51 `i -> 51 `i `uc ]
+[; ;LCD.c: 74:     uint8_t valor = 0;
+[v _valor `uc ~T0 @X0 1 a ]
+[e = _valor -> -> 0 `i `uc ]
 "75
-[; ;LCD.c: 75:     if (column == 0) {
-[e $ ! == -> _column `i -> 0 `i 159  ]
-{
+[; ;LCD.c: 75:     uint8_t coordenada = 0;
+[v _coordenada `uc ~T0 @X0 1 a ]
+[e = _coordenada -> -> 0 `i `uc ]
 "76
-[; ;LCD.c: 76:         if (unidades == 0){LCD_PRINT_WP(0,2,"-0.00V");}
-[e $ ! == -> _unidades `i -> 0 `i 160  ]
-{
-[e ( _LCD_PRINT_WP (3 , , -> 0 `i -> 2 `i :s 1C ]
-}
-[e $U 161  ]
+[; ;LCD.c: 76:     uint8_t unidades = (result - (result % 50))/50;
+[v _unidades `uc ~T0 @X0 1 a ]
+[e = _unidades -> / - -> _result `i % -> _result `i -> 50 `i -> 50 `i `uc ]
 "77
-[; ;LCD.c: 77:         else if (unidades == 1){LCD_PRINT_WP(0,2,"-1.00V");}
-[e :U 160 ]
-[e $ ! == -> _unidades `i -> 1 `i 162  ]
-{
-[e ( _LCD_PRINT_WP (3 , , -> 0 `i -> 2 `i :s 2C ]
-}
-[e $U 163  ]
+[; ;LCD.c: 77:     uint8_t decimas = ((result %50) -((result %50)%5))/5;
+[v _decimas `uc ~T0 @X0 1 a ]
+[e = _decimas -> / - % -> _result `i -> 50 `i % % -> _result `i -> 50 `i -> 5 `i -> 5 `i `uc ]
 "78
-[; ;LCD.c: 78:         else if (unidades == 2){LCD_PRINT_WP(0,2,"-2.00V");}
-[e :U 162 ]
-[e $ ! == -> _unidades `i -> 2 `i 164  ]
-{
-[e ( _LCD_PRINT_WP (3 , , -> 0 `i -> 2 `i :s 3C ]
-}
-[e $U 165  ]
+[; ;LCD.c: 78:     uint8_t centesimas = (((result %50)%5) -(((result %50)%5)%1))*2;
+[v _centesimas `uc ~T0 @X0 1 a ]
+[e = _centesimas -> * - % % -> _result `i -> 50 `i -> 5 `i % % % -> _result `i -> 50 `i -> 5 `i -> 1 `i -> 2 `i `uc ]
+[v F1517 `i ~T0 @X0 -> 3 `i s ]
+[i F1517
+:U ..
 "79
-[; ;LCD.c: 79:         else if (unidades == 3){LCD_PRINT_WP(0,2,"-3.00V");}
-[e :U 164 ]
-[e $ ! == -> _unidades `i -> 3 `i 166  ]
-{
-[e ( _LCD_PRINT_WP (3 , , -> 0 `i -> 2 `i :s 4C ]
-}
-[e $U 167  ]
+[; ;LCD.c: 79:     int numero[] = {unidades,decimas,centesimas};
+-> 0 `i
+-> 0 `i
+-> 0 `i
+..
+]
+[v _numero `i ~T0 @X0 -> 3 `i a ]
+[e = _numero F1517 ]
+[e ; = *U + &U _numero * -> -> -> 0 `i `ui `ux -> -> # *U &U _numero `ui `ux -> _unidades `i ; = *U + &U _numero * -> -> -> 1 `i `ui `ux -> -> # *U &U _numero `ui `ux -> _decimas `i = *U + &U _numero * -> -> -> 2 `i `ui `ux -> -> # *U &U _numero `ui `ux -> _centesimas `i ]
 "80
-[; ;LCD.c: 80:         else if (unidades == 4){LCD_PRINT_WP(0,2,"-4.00V");}
-[e :U 166 ]
-[e $ ! == -> _unidades `i -> 4 `i 168  ]
+[; ;LCD.c: 80:     if (column == 0){
+[e $ ! == -> _column `i -> 0 `i 160  ]
 {
-[e ( _LCD_PRINT_WP (3 , , -> 0 `i -> 2 `i :s 5C ]
-}
-[e $U 169  ]
 "81
-[; ;LCD.c: 81:         else if (unidades == 5){LCD_PRINT_WP(0,2,"-5.00V");}}
-[e :U 168 ]
-[e $ ! == -> _unidades `i -> 5 `i 170  ]
+[; ;LCD.c: 81:         for (int i=0; i<3;i++){
 {
-[e ( _LCD_PRINT_WP (3 , , -> 0 `i -> 2 `i :s 6C ]
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 3 `i 161  ]
+[e $U 162  ]
+[e :U 161 ]
+{
+"82
+[; ;LCD.c: 82:             valor = numero[i];
+[e = _valor -> *U + &U _numero * -> -> _i `ui `ux -> -> # *U &U _numero `ui `ux `uc ]
+"83
+[; ;LCD.c: 83:             if (i == 0) {coordenada = 1;}
+[e $ ! == _i -> 0 `i 164  ]
+{
+[e = _coordenada -> -> 1 `i `uc ]
+}
+[e :U 164 ]
+"84
+[; ;LCD.c: 84:             if (i == 1) {coordenada = 3;}
+[e $ ! == _i -> 1 `i 165  ]
+{
+[e = _coordenada -> -> 3 `i `uc ]
+}
+[e :U 165 ]
+"85
+[; ;LCD.c: 85:             if (i == 2) {coordenada = 4;}
+[e $ ! == _i -> 2 `i 166  ]
+{
+[e = _coordenada -> -> 4 `i `uc ]
+}
+[e :U 166 ]
+"86
+[; ;LCD.c: 86:             if (valor == 0){LCD_PRINT_WP(coordenada,2,"0");}
+[e $ ! == -> _valor `i -> 0 `i 167  ]
+{
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 1C ]
+}
+[e :U 167 ]
+"87
+[; ;LCD.c: 87:             if (valor == 1){LCD_PRINT_WP(coordenada,2,"1");}
+[e $ ! == -> _valor `i -> 1 `i 168  ]
+{
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 2C ]
+}
+[e :U 168 ]
+"88
+[; ;LCD.c: 88:             if (valor == 2){LCD_PRINT_WP(coordenada,2,"2");}
+[e $ ! == -> _valor `i -> 2 `i 169  ]
+{
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 3C ]
+}
+[e :U 169 ]
+"89
+[; ;LCD.c: 89:             if (valor == 3){LCD_PRINT_WP(coordenada,2,"3");}
+[e $ ! == -> _valor `i -> 3 `i 170  ]
+{
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 4C ]
 }
 [e :U 170 ]
-[e :U 169 ]
-[e :U 167 ]
-[e :U 165 ]
-[e :U 163 ]
-[e :U 161 ]
-}
-[e $U 171  ]
-"82
-[; ;LCD.c: 82:     else if (column == 1){
-[e :U 159 ]
-[e $ ! == -> _column `i -> 1 `i 172  ]
+"90
+[; ;LCD.c: 90:             if (valor == 4){LCD_PRINT_WP(coordenada,2,"4");}
+[e $ ! == -> _valor `i -> 4 `i 171  ]
 {
-"83
-[; ;LCD.c: 83:         if (unidades == 0){LCD_PRINT_WP(6,2,"-0.00V");}
-[e $ ! == -> _unidades `i -> 0 `i 173  ]
-{
-[e ( _LCD_PRINT_WP (3 , , -> 6 `i -> 2 `i :s 7C ]
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 5C ]
 }
-[e $U 174  ]
-"84
-[; ;LCD.c: 84:         else if (unidades == 1){LCD_PRINT_WP(6,2,"-1.00V");}
-[e :U 173 ]
-[e $ ! == -> _unidades `i -> 1 `i 175  ]
+[e :U 171 ]
+"91
+[; ;LCD.c: 91:             if (valor == 5){LCD_PRINT_WP(coordenada,2,"5");}
+[e $ ! == -> _valor `i -> 5 `i 172  ]
 {
-[e ( _LCD_PRINT_WP (3 , , -> 6 `i -> 2 `i :s 8C ]
-}
-[e $U 176  ]
-"85
-[; ;LCD.c: 85:         else if (unidades == 2){LCD_PRINT_WP(6,2,"-2.00V");}
-[e :U 175 ]
-[e $ ! == -> _unidades `i -> 2 `i 177  ]
-{
-[e ( _LCD_PRINT_WP (3 , , -> 6 `i -> 2 `i :s 9C ]
-}
-[e $U 178  ]
-"86
-[; ;LCD.c: 86:         else if (unidades == 3){LCD_PRINT_WP(6,2,"-3.00V");}
-[e :U 177 ]
-[e $ ! == -> _unidades `i -> 3 `i 179  ]
-{
-[e ( _LCD_PRINT_WP (3 , , -> 6 `i -> 2 `i :s 10C ]
-}
-[e $U 180  ]
-"87
-[; ;LCD.c: 87:         else if (unidades == 4){LCD_PRINT_WP(6,2,"-4.00V");}
-[e :U 179 ]
-[e $ ! == -> _unidades `i -> 4 `i 181  ]
-{
-[e ( _LCD_PRINT_WP (3 , , -> 6 `i -> 2 `i :s 11C ]
-}
-[e $U 182  ]
-"88
-[; ;LCD.c: 88:         else if (unidades == 5){LCD_PRINT_WP(6,2,"-5.00V");}}
-[e :U 181 ]
-[e $ ! == -> _unidades `i -> 5 `i 183  ]
-{
-[e ( _LCD_PRINT_WP (3 , , -> 6 `i -> 2 `i :s 12C ]
-}
-[e :U 183 ]
-[e :U 182 ]
-[e :U 180 ]
-[e :U 178 ]
-[e :U 176 ]
-[e :U 174 ]
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 6C ]
 }
 [e :U 172 ]
-[e :U 171 ]
-"90
-[; ;LCD.c: 90:     }
+"92
+[; ;LCD.c: 92:             if (valor == 6){LCD_PRINT_WP(coordenada,2,"6");}
+[e $ ! == -> _valor `i -> 6 `i 173  ]
+{
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 7C ]
+}
+[e :U 173 ]
+"93
+[; ;LCD.c: 93:             if (valor == 7){LCD_PRINT_WP(coordenada,2,"7");}
+[e $ ! == -> _valor `i -> 7 `i 174  ]
+{
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 8C ]
+}
+[e :U 174 ]
+"94
+[; ;LCD.c: 94:             if (valor == 8){LCD_PRINT_WP(coordenada,2,"8");}
+[e $ ! == -> _valor `i -> 8 `i 175  ]
+{
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 9C ]
+}
+[e :U 175 ]
+"95
+[; ;LCD.c: 95:             if (valor == 9){LCD_PRINT_WP(coordenada,2,"9");}}}
+[e $ ! == -> _valor `i -> 9 `i 176  ]
+{
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 10C ]
+}
+[e :U 176 ]
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 3 `i 161  ]
+[e :U 162 ]
+}
+}
+[e :U 160 ]
+"96
+[; ;LCD.c: 96:     if (column == 1){
+[e $ ! == -> _column `i -> 1 `i 177  ]
+{
+"97
+[; ;LCD.c: 97:             for (int i=0; i<3;i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 3 `i 178  ]
+[e $U 179  ]
+[e :U 178 ]
+{
+"98
+[; ;LCD.c: 98:                 valor = numero[i];
+[e = _valor -> *U + &U _numero * -> -> _i `ui `ux -> -> # *U &U _numero `ui `ux `uc ]
+"99
+[; ;LCD.c: 99:                 if (i == 0) {coordenada = 7;}
+[e $ ! == _i -> 0 `i 181  ]
+{
+[e = _coordenada -> -> 7 `i `uc ]
+}
+[e :U 181 ]
+"100
+[; ;LCD.c: 100:                 if (i == 1) {coordenada = 9;}
+[e $ ! == _i -> 1 `i 182  ]
+{
+[e = _coordenada -> -> 9 `i `uc ]
+}
+[e :U 182 ]
+"101
+[; ;LCD.c: 101:                 if (i == 2) {coordenada = 10;}
+[e $ ! == _i -> 2 `i 183  ]
+{
+[e = _coordenada -> -> 10 `i `uc ]
+}
+[e :U 183 ]
+"102
+[; ;LCD.c: 102:                 if (valor == 0){LCD_PRINT_WP(coordenada,2,"0");}
+[e $ ! == -> _valor `i -> 0 `i 184  ]
+{
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 11C ]
+}
+[e :U 184 ]
+"103
+[; ;LCD.c: 103:                 if (valor == 1){LCD_PRINT_WP(coordenada,2,"1");}
+[e $ ! == -> _valor `i -> 1 `i 185  ]
+{
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 12C ]
+}
+[e :U 185 ]
+"104
+[; ;LCD.c: 104:                 if (valor == 2){LCD_PRINT_WP(coordenada,2,"2");}
+[e $ ! == -> _valor `i -> 2 `i 186  ]
+{
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 13C ]
+}
+[e :U 186 ]
+"105
+[; ;LCD.c: 105:                 if (valor == 3){LCD_PRINT_WP(coordenada,2,"3");}
+[e $ ! == -> _valor `i -> 3 `i 187  ]
+{
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 14C ]
+}
+[e :U 187 ]
+"106
+[; ;LCD.c: 106:                 if (valor == 4){LCD_PRINT_WP(coordenada,2,"4");}
+[e $ ! == -> _valor `i -> 4 `i 188  ]
+{
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 15C ]
+}
+[e :U 188 ]
+"107
+[; ;LCD.c: 107:                 if (valor == 5){LCD_PRINT_WP(coordenada,2,"5");}
+[e $ ! == -> _valor `i -> 5 `i 189  ]
+{
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 16C ]
+}
+[e :U 189 ]
+"108
+[; ;LCD.c: 108:                 if (valor == 6){LCD_PRINT_WP(coordenada,2,"6");}
+[e $ ! == -> _valor `i -> 6 `i 190  ]
+{
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 17C ]
+}
+[e :U 190 ]
+"109
+[; ;LCD.c: 109:                 if (valor == 7){LCD_PRINT_WP(coordenada,2,"7");}
+[e $ ! == -> _valor `i -> 7 `i 191  ]
+{
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 18C ]
+}
+[e :U 191 ]
+"110
+[; ;LCD.c: 110:                 if (valor == 8){LCD_PRINT_WP(coordenada,2,"8");}
+[e $ ! == -> _valor `i -> 8 `i 192  ]
+{
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 19C ]
+}
+[e :U 192 ]
+"111
+[; ;LCD.c: 111:                 if (valor == 9){LCD_PRINT_WP(coordenada,2,"9");}
+[e $ ! == -> _valor `i -> 9 `i 193  ]
+{
+[e ( _LCD_PRINT_WP (3 , , -> _coordenada `i -> 2 `i :s 20C ]
+}
+[e :U 193 ]
+"113
+[; ;LCD.c: 113:         }}
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 3 `i 178  ]
+[e :U 179 ]
+}
+}
+[e :U 177 ]
+"114
+[; ;LCD.c: 114: }
 [e :UE 158 ]
 }
-[a 6C 45 53 46 48 48 86 0 ]
-[a 12C 45 53 46 48 48 86 0 ]
-[a 5C 45 52 46 48 48 86 0 ]
-[a 11C 45 52 46 48 48 86 0 ]
-[a 4C 45 51 46 48 48 86 0 ]
-[a 10C 45 51 46 48 48 86 0 ]
-[a 3C 45 50 46 48 48 86 0 ]
-[a 9C 45 50 46 48 48 86 0 ]
-[a 2C 45 49 46 48 48 86 0 ]
-[a 8C 45 49 46 48 48 86 0 ]
-[a 1C 45 48 46 48 48 86 0 ]
-[a 7C 45 48 46 48 48 86 0 ]
+[a 10C 57 0 ]
+[a 20C 57 0 ]
+[a 9C 56 0 ]
+[a 19C 56 0 ]
+[a 8C 55 0 ]
+[a 18C 55 0 ]
+[a 7C 54 0 ]
+[a 17C 54 0 ]
+[a 6C 53 0 ]
+[a 16C 53 0 ]
+[a 5C 52 0 ]
+[a 15C 52 0 ]
+[a 4C 51 0 ]
+[a 14C 51 0 ]
+[a 3C 50 0 ]
+[a 13C 50 0 ]
+[a 2C 49 0 ]
+[a 12C 49 0 ]
+[a 1C 48 0 ]
+[a 11C 48 0 ]

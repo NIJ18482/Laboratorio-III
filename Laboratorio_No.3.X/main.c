@@ -58,8 +58,8 @@ void main(void) {
     delay_ms(150);
     LCD_CLEAR();
     LCD_RH();
-    LCD_PRINT_WP(0,1," SEN.1 SEN.2 CT ");
-    LCD_PRINT_WP(0,2,"-0.00V-0.00V-000");
+    LCD_PRINT_WP(0,1,"|SEN.2|SEN.1| CT");
+    LCD_PRINT_WP(0,2,"|0.00V|0.00V|000");
     CONFIG_ADC();
     while(1){       /*************** MAIN GLORIUS SPARTAN PROGRAM *************/
         

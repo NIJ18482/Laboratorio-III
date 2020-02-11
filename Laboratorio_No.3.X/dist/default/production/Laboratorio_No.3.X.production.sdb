@@ -176,13 +176,27 @@
 [v _VAL VAL `(v  1 e 1 0 ]
 {
 [v VAL@result result `uc  1 a 1 wreg ]
-"73
+"97
+[v VAL@i_371 i `i  1 a 2 27 ]
+"81
+[v VAL@i i `i  1 a 2 25 ]
+"79
+[v VAL@numero numero `[3]i  1 a 6 17 ]
+"75
+[v VAL@coordenada coordenada `uc  1 a 1 31 ]
+"74
+[v VAL@valor valor `uc  1 a 1 30 ]
+"78
+[v VAL@centesimas centesimas `uc  1 a 1 16 ]
+"77
+[v VAL@decimas decimas `uc  1 a 1 15 ]
+"76
 [v VAL@unidades unidades `uc  1 a 1 14 ]
 "72
 [v VAL@result result `uc  1 a 1 wreg ]
 [v VAL@column column `uc  1 p 1 8 ]
-[v VAL@result result `uc  1 a 1 13 ]
-"90
+[v VAL@result result `uc  1 a 1 29 ]
+"114
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]

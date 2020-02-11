@@ -2892,21 +2892,45 @@ void LCD_PRINT_WP(int x, int y, char*frase){
 }
 
 void VAL(uint8_t result,uint8_t column){
-    uint8_t unidades = 0;
-    unidades = (result - (result % 51))/51;
-    if (column == 0) {
-        if (unidades == 0){LCD_PRINT_WP(0,2,"-0.00V");}
-        else if (unidades == 1){LCD_PRINT_WP(0,2,"-1.00V");}
-        else if (unidades == 2){LCD_PRINT_WP(0,2,"-2.00V");}
-        else if (unidades == 3){LCD_PRINT_WP(0,2,"-3.00V");}
-        else if (unidades == 4){LCD_PRINT_WP(0,2,"-4.00V");}
-        else if (unidades == 5){LCD_PRINT_WP(0,2,"-5.00V");}}
-    else if (column == 1){
-        if (unidades == 0){LCD_PRINT_WP(6,2,"-0.00V");}
-        else if (unidades == 1){LCD_PRINT_WP(6,2,"-1.00V");}
-        else if (unidades == 2){LCD_PRINT_WP(6,2,"-2.00V");}
-        else if (unidades == 3){LCD_PRINT_WP(6,2,"-3.00V");}
-        else if (unidades == 4){LCD_PRINT_WP(6,2,"-4.00V");}
-        else if (unidades == 5){LCD_PRINT_WP(6,2,"-5.00V");}}
+    if (result>=250){result = 250;}
+    uint8_t valor = 0;
+    uint8_t coordenada = 0;
+    uint8_t unidades = (result - (result % 50))/50;
+    uint8_t decimas = ((result %50) -((result %50)%5))/5;
+    uint8_t centesimas = (((result %50)%5) -(((result %50)%5)%1))*2;
+    int numero[] = {unidades,decimas,centesimas};
+    if (column == 0){
+        for (int i=0; i<3;i++){
+            valor = numero[i];
+            if (i == 0) {coordenada = 1;}
+            if (i == 1) {coordenada = 3;}
+            if (i == 2) {coordenada = 4;}
+            if (valor == 0){LCD_PRINT_WP(coordenada,2,"0");}
+            if (valor == 1){LCD_PRINT_WP(coordenada,2,"1");}
+            if (valor == 2){LCD_PRINT_WP(coordenada,2,"2");}
+            if (valor == 3){LCD_PRINT_WP(coordenada,2,"3");}
+            if (valor == 4){LCD_PRINT_WP(coordenada,2,"4");}
+            if (valor == 5){LCD_PRINT_WP(coordenada,2,"5");}
+            if (valor == 6){LCD_PRINT_WP(coordenada,2,"6");}
+            if (valor == 7){LCD_PRINT_WP(coordenada,2,"7");}
+            if (valor == 8){LCD_PRINT_WP(coordenada,2,"8");}
+            if (valor == 9){LCD_PRINT_WP(coordenada,2,"9");}}}
+    if (column == 1){
+            for (int i=0; i<3;i++){
+                valor = numero[i];
+                if (i == 0) {coordenada = 7;}
+                if (i == 1) {coordenada = 9;}
+                if (i == 2) {coordenada = 10;}
+                if (valor == 0){LCD_PRINT_WP(coordenada,2,"0");}
+                if (valor == 1){LCD_PRINT_WP(coordenada,2,"1");}
+                if (valor == 2){LCD_PRINT_WP(coordenada,2,"2");}
+                if (valor == 3){LCD_PRINT_WP(coordenada,2,"3");}
+                if (valor == 4){LCD_PRINT_WP(coordenada,2,"4");}
+                if (valor == 5){LCD_PRINT_WP(coordenada,2,"5");}
+                if (valor == 6){LCD_PRINT_WP(coordenada,2,"6");}
+                if (valor == 7){LCD_PRINT_WP(coordenada,2,"7");}
+                if (valor == 8){LCD_PRINT_WP(coordenada,2,"8");}
+                if (valor == 9){LCD_PRINT_WP(coordenada,2,"9");}
 
-    }
+        }}
+}
