@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\LJNC\AppData\Local\Temp\sc4k.o
+$C:\Users\LJNC\AppData\Local\Temp\sftc.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 0 2007 2007 2 2
@@ -90,25 +90,25 @@ STRING 799-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Laboratorio_No.3.X.production.o
-F cinit CODE >1159:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
-F cinit CODE >1162:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
-F cinit CODE >1191:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
-10 cinit CODE >1192:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
-11 cinit CODE >1193:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
-12 cinit CODE >1194:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
-13 cinit CODE >1195:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
-14 cinit CODE >1196:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
-15 cinit CODE >1197:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
-16 cinit CODE >1198:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
-17 cinit CODE >1199:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
-18 cinit CODE >1200:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
-19 cinit CODE >1201:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
-1A cinit CODE >1202:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
-1B cinit CODE >1203:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
-1C cinit CODE >1204:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
-1D cinit CODE >1210:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
-1D cinit CODE >1212:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
-1E cinit CODE >1213:C:\Users\LJNC\AppData\Local\Temp\sc4k.s
+F cinit CODE >1159:C:\Users\LJNC\AppData\Local\Temp\sftc.s
+F cinit CODE >1162:C:\Users\LJNC\AppData\Local\Temp\sftc.s
+F cinit CODE >1191:C:\Users\LJNC\AppData\Local\Temp\sftc.s
+10 cinit CODE >1192:C:\Users\LJNC\AppData\Local\Temp\sftc.s
+11 cinit CODE >1193:C:\Users\LJNC\AppData\Local\Temp\sftc.s
+12 cinit CODE >1194:C:\Users\LJNC\AppData\Local\Temp\sftc.s
+13 cinit CODE >1195:C:\Users\LJNC\AppData\Local\Temp\sftc.s
+14 cinit CODE >1196:C:\Users\LJNC\AppData\Local\Temp\sftc.s
+15 cinit CODE >1197:C:\Users\LJNC\AppData\Local\Temp\sftc.s
+16 cinit CODE >1198:C:\Users\LJNC\AppData\Local\Temp\sftc.s
+17 cinit CODE >1199:C:\Users\LJNC\AppData\Local\Temp\sftc.s
+18 cinit CODE >1200:C:\Users\LJNC\AppData\Local\Temp\sftc.s
+19 cinit CODE >1201:C:\Users\LJNC\AppData\Local\Temp\sftc.s
+1A cinit CODE >1202:C:\Users\LJNC\AppData\Local\Temp\sftc.s
+1B cinit CODE >1203:C:\Users\LJNC\AppData\Local\Temp\sftc.s
+1C cinit CODE >1204:C:\Users\LJNC\AppData\Local\Temp\sftc.s
+1D cinit CODE >1210:C:\Users\LJNC\AppData\Local\Temp\sftc.s
+1D cinit CODE >1212:C:\Users\LJNC\AppData\Local\Temp\sftc.s
+1E cinit CODE >1213:C:\Users\LJNC\AppData\Local\Temp\sftc.s
 4 intentry CODE >31:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
 63E text16 CODE >31:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
 63E text16 CODE >32:C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
@@ -349,12 +349,12 @@ __end_of_LCD_RH F24 0 CODE 0 text8 dist/default/production\Laboratorio_No.3.X.pr
 __Hstrings 0 0 ABS 0 strings -
 VAL@i 39 0 BANK0 1 cstackBANK0 dist/default/production\Laboratorio_No.3.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\LJNC\AppData\Local\Temp\sc4k.o
+___sp 0 0 STACK 2 stack C:\Users\LJNC\AppData\Local\Temp\sftc.o
 _eADC 4B 0 BANK0 1 bssBANK0 dist/default/production\Laboratorio_No.3.X.production.o
 _main 756 0 CODE 0 maintext dist/default/production\Laboratorio_No.3.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 __end_of_LCD_CONTROL EF8 0 CODE 0 text11 dist/default/production\Laboratorio_No.3.X.production.o
-start 18 0 CODE 0 init C:\Users\LJNC\AppData\Local\Temp\sc4k.o
+start 18 0 CODE 0 init C:\Users\LJNC\AppData\Local\Temp\sftc.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 __size_of___awmod 0 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
@@ -368,12 +368,12 @@ __Hpowerup 0 0 CODE 0 powerup -
 ___awmod@sign 79 0 COMMON 1 cstackCOMMON dist/default/production\Laboratorio_No.3.X.production.o
 _CONFIG_ADC EF8 0 CODE 0 text15 dist/default/production\Laboratorio_No.3.X.production.o
 __end_of_LCD_DATO ED4 0 CODE 0 text7 dist/default/production\Laboratorio_No.3.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\sc4k.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\sc4k.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\sc4k.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\sc4k.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\sc4k.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\sc4k.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\sftc.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\sftc.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\sftc.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\sftc.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\sftc.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\LJNC\AppData\Local\Temp\sftc.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 ___awdiv@sign 25 0 BANK0 1 cstackBANK0 dist/default/production\Laboratorio_No.3.X.production.o
@@ -390,8 +390,8 @@ __end_of___awdiv BCA 0 CODE 0 text4 dist/default/production\Laboratorio_No.3.X.p
 __end_of___awmod C7C 0 CODE 0 text3 dist/default/production\Laboratorio_No.3.X.production.o
 delay_us@ams 74 0 COMMON 1 cstackCOMMON dist/default/production\Laboratorio_No.3.X.production.o
 __end_of_CONFIG_ADC F16 0 CODE 0 text15 dist/default/production\Laboratorio_No.3.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\LJNC\AppData\Local\Temp\sc4k.o
-___stacklo 0 0 ABS 0 - C:\Users\LJNC\AppData\Local\Temp\sc4k.o
+___stackhi 0 0 ABS 0 - C:\Users\LJNC\AppData\Local\Temp\sftc.o
+___stacklo 0 0 ABS 0 - C:\Users\LJNC\AppData\Local\Temp\sftc.o
 _LCD_RH F16 0 CODE 0 text8 dist/default/production\Laboratorio_No.3.X.production.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 LCD_DATO@comando 77 0 COMMON 1 cstackCOMMON dist/default/production\Laboratorio_No.3.X.production.o
@@ -404,7 +404,7 @@ __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Laboratorio_No.3
 LCD_PRINT_WP@frase 24 0 BANK0 1 cstackBANK0 dist/default/production\Laboratorio_No.3.X.production.o
 __size_of_LCD_RH 0 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 __end_of_LCD_CLEAR F32 0 CODE 0 text9 dist/default/production\Laboratorio_No.3.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\LJNC\AppData\Local\Temp\sc4k.o
+___int_sp 0 0 STACK 2 stack C:\Users\LJNC\AppData\Local\Temp\sftc.o
 __end_of_LCD_PRINT E58 0 CODE 0 text6 dist/default/production\Laboratorio_No.3.X.production.o
 __end_of_LCD_PULSE EB0 0 CODE 0 text13 dist/default/production\Laboratorio_No.3.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
@@ -470,7 +470,7 @@ __end_of_VAL 756 0 CODE 0 text2 dist/default/production\Laboratorio_No.3.X.produ
 __end_of_isr CE2 0 CODE 0 text16 dist/default/production\Laboratorio_No.3.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
 __stringtab A00 0 STRING 0 strings dist/default/production\Laboratorio_No.3.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\LJNC\AppData\Local\Temp\sc4k.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\LJNC\AppData\Local\Temp\sftc.o
 VAL@numero 31 0 BANK0 1 cstackBANK0 dist/default/production\Laboratorio_No.3.X.production.o
 __size_of_INIT_LCD 0 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
 __size_of_CONFIG_ADC 0 0 ABS 0 - dist/default/production\Laboratorio_No.3.X.production.o
