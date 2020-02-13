@@ -5,6 +5,8 @@
 [d frameptr 0 ]
 "15 C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
 [v _CONFIG_ADC CONFIG_ADC `(v  1 e 1 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
@@ -39,12 +41,14 @@
 [v _LCD_PRINT_WP LCD_PRINT_WP `(v  1 e 1 0 ]
 "72
 [v _VAL VAL `(v  1 e 1 0 ]
-"31 C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+"32 C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
 [v _isr isr `II(v  1 e 1 0 ]
-"44
+"45
 [v _main main `(v  1 e 1 0 ]
-"81
+"83
 [v _setup setup `(v  1 e 1 0 ]
+"4 C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\USART.c
+[v _CONFIG_USART CONFIG_USART `(v  1 e 1 0 ]
 "59 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
 "228
@@ -55,14 +59,14 @@
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S299 . 1 `uc 1 RE0 1 0 :1:0 
+[s S304 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 `uc 1 RE3 1 0 :1:3 
 ]
 "427
-[u S304 . 1 `S299 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES304  1 e 1 @9 ]
+[u S309 . 1 `S304 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES309  1 e 1 @9 ]
 [s S22 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
@@ -105,7 +109,7 @@
 ]
 [u S74 . 1 `S54 1 . 1 0 `S59 1 . 1 0 `S68 1 . 1 0 `S71 1 . 1 0 ]
 [v _ADCON0bits ADCON0bits `VES74  1 e 1 @31 ]
-[s S151 . 1 `uc 1 PS 1 0 :3:0 
+[s S156 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -113,12 +117,12 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1366
-[s S158 . 1 `uc 1 PS0 1 0 :1:0 
+[s S163 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S162 . 1 `S151 1 . 1 0 `S158 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES162  1 e 1 @129 ]
+[u S167 . 1 `S156 1 . 1 0 `S163 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES167  1 e 1 @129 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1478
@@ -129,55 +133,57 @@
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S285 . 1 `uc 1 TRISE0 1 0 :1:0 
+[s S290 . 1 `uc 1 TRISE0 1 0 :1:0 
 `uc 1 TRISE1 1 0 :1:1 
 `uc 1 TRISE2 1 0 :1:2 
 `uc 1 TRISE3 1 0 :1:3 
 ]
 "1677
-[u S290 . 1 `S285 1 . 1 0 ]
-[v _TRISEbits TRISEbits `VES290  1 e 1 @137 ]
-[s S234 . 1 `uc 1 . 1 0 :4:0 
+[u S295 . 1 `S290 1 . 1 0 ]
+[v _TRISEbits TRISEbits `VES295  1 e 1 @137 ]
+"2642
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+[s S239 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S240 . 1 `S234 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES240  1 e 1 @159 ]
+[u S245 . 1 `S239 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES245  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-"22 C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+"23 C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
 [v _cambiante cambiante `uc  1 e 1 0 ]
-"23
-[v _eADC eADC `uc  1 e 1 0 ]
 "24
-[v _ADCAN0 ADCAN0 `uc  1 e 1 0 ]
+[v _eADC eADC `uc  1 e 1 0 ]
 "25
-[v _ADCAN1 ADCAN1 `uc  1 e 1 0 ]
+[v _ADCAN0 ADCAN0 `uc  1 e 1 0 ]
 "26
-[v _sensor sensor `uc  1 e 1 0 ]
+[v _ADCAN1 ADCAN1 `uc  1 e 1 0 ]
 "27
+[v _sensor sensor `uc  1 e 1 0 ]
+"28
 [v _sen sen `uc  1 e 1 0 ]
-"44
+"45
 [v _main main `(v  1 e 1 0 ]
 {
-"77
+"79
 } 0
-"81
+"83
 [v _setup setup `(v  1 e 1 0 ]
 {
-"107
+"109
 } 0
 "72 C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\LCD.c
 [v _VAL VAL `(v  1 e 1 0 ]
 {
 [v VAL@result result `uc  1 a 1 wreg ]
 "97
-[v VAL@i_371 i `i  1 a 2 27 ]
+[v VAL@i_376 i `i  1 a 2 27 ]
 "81
 [v VAL@i i `i  1 a 2 25 ]
 "79
@@ -300,13 +306,32 @@
 [v delay_us@ams ams `uc  1 a 1 4 ]
 "24
 } 0
+"4 C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\USART.c
+[v _CONFIG_USART CONFIG_USART `(v  1 e 1 0 ]
+{
+[v CONFIG_USART@BAUD BAUD `l  1 p 4 7 ]
+"5
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"10
+[v ___aldiv@quotient quotient `l  1 a 4 3 ]
+"11
+[v ___aldiv@sign sign `uc  1 a 1 2 ]
+[v ___aldiv@counter counter `uc  1 a 1 1 ]
+"5
+[v ___aldiv@divisor divisor `l  1 p 4 3 ]
+[v ___aldiv@dividend dividend `l  1 p 4 7 ]
+"41
+} 0
 "15 C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
 [v _CONFIG_ADC CONFIG_ADC `(v  1 e 1 0 ]
 {
 "27
 } 0
-"31 C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
+"32 C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\main.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"42
+"43
 } 0

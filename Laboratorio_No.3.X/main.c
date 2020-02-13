@@ -16,6 +16,7 @@
     #include "ADC.h"           /* INCLUSIÓN DE MI LIBRERÍA DEL MANEJOD DE ADC */
     #include "DELAYS.h"        /*  INCLUSIÓN DE MI LIBRERÍA DE DELAYS PATITO  */
     #include "LCD.h"           /* INCLUSIÓN DE MI LIBRERÍA DEL F*UCKING LCD   */
+    #include "USART.h"         /* INCLUSION DE LIBRERIA DE COMUNICACION USART */
 /******************************************************************************/
 /************ PROTOCOLO DE FUNCIONES, VARIABLES Y DEMÁS DEFINICIONES **********/
 void setup (void);
@@ -60,6 +61,7 @@ void main(void) {
     LCD_RH();
     LCD_PRINT_WP(0,1,"|SEN.2|SEN.1| CT");
     LCD_PRINT_WP(0,2,"|0.00V|0.00V|000");
+    CONFIG_USART(9600);
     CONFIG_ADC();
     while(1){       /*************** MAIN GLORIUS SPARTAN PROGRAM *************/
         
