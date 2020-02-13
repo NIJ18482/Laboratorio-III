@@ -2496,4 +2496,21 @@ extern __bank0 __bit __timeout;
 # 3 "USART.c" 2
 
 void CONFIG_USART(long BAUD){
+    TRISCbits.TRISC6 = 0;
+    TRISCbits.TRISC7 = 1;
+    TXSTAbits.SYNC = 0;
+    RCSTAbits.SPEN = 1;
+    TXSTAbits.BRGH = 0;
+    TXSTAbits.TX9 = 0;
+    TXSTAbits.TXEN = 1;
+    RCSTAbits.RC9 = 0;
+    RCSTAbits.CREN = 1;
     SPBRG = (unsigned char)(((4000000/BAUD)/(64))-1);}
+
+void USART_tx(char data){
+    TXREG = data;
+}
+
+char USART_rx(){
+    return RCREG;
+}

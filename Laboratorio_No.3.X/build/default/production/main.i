@@ -2676,6 +2676,8 @@ void VAL(uint8_t,uint8_t);
 
 
 void CONFIG_USART(long);
+void USART_tx(char);
+char USART_rx(void);
 # 19 "main.c" 2
 
 
