@@ -315,8 +315,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;USART.c: 8:     RCSTAbits.SPEN = 1;
 [e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
 "9
-[; ;USART.c: 9:     TXSTAbits.BRGH = 0;
-[e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
+[; ;USART.c: 9:     TXSTAbits.BRGH = 1;
+[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
 "10
 [; ;USART.c: 10:     TXSTAbits.TX9 = 0;
 [e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
@@ -330,8 +330,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;USART.c: 13:     RCSTAbits.CREN = 1;
 [e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
 "14
-[; ;USART.c: 14:     SPBRG = (unsigned char)(((4000000/BAUD)/(64))-1);}
-[e = _SPBRG -> - / / -> 4000000 `l _BAUD -> -> 64 `i `l -> -> 1 `i `l `uc ]
+[; ;USART.c: 14:     SPBRG = 25;}
+[e = _SPBRG -> -> 25 `i `uc ]
 [e :UE 138 ]
 }
 "16

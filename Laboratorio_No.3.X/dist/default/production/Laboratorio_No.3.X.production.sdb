@@ -5,8 +5,6 @@
 [d frameptr 0 ]
 "15 C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
 [v _CONFIG_ADC CONFIG_ADC `(v  1 e 1 0 ]
-"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-[v ___aldiv __aldiv `(l  1 e 4 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
@@ -366,21 +364,8 @@
 "4 C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\USART.c
 [v _CONFIG_USART CONFIG_USART `(v  1 e 1 0 ]
 {
-[v CONFIG_USART@BAUD BAUD `l  1 p 4 7 ]
+[v CONFIG_USART@BAUD BAUD `l  1 p 4 3 ]
 "14
-} 0
-"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-[v ___aldiv __aldiv `(l  1 e 4 0 ]
-{
-"10
-[v ___aldiv@quotient quotient `l  1 a 4 3 ]
-"11
-[v ___aldiv@sign sign `uc  1 a 1 2 ]
-[v ___aldiv@counter counter `uc  1 a 1 1 ]
-"5
-[v ___aldiv@divisor divisor `l  1 p 4 3 ]
-[v ___aldiv@dividend dividend `l  1 p 4 7 ]
-"41
 } 0
 "15 C:\Digital2\Laboratorio-III\Laboratorio_No.3.X\ADC.c
 [v _CONFIG_ADC CONFIG_ADC `(v  1 e 1 0 ]

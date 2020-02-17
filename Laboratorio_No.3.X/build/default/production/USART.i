@@ -2500,12 +2500,12 @@ void CONFIG_USART(long BAUD){
     TRISCbits.TRISC7 = 1;
     TXSTAbits.SYNC = 0;
     RCSTAbits.SPEN = 1;
-    TXSTAbits.BRGH = 0;
+    TXSTAbits.BRGH = 1;
     TXSTAbits.TX9 = 0;
     TXSTAbits.TXEN = 1;
     RCSTAbits.RC9 = 0;
     RCSTAbits.CREN = 1;
-    SPBRG = (unsigned char)(((4000000/BAUD)/(64))-1);}
+    SPBRG = 25;}
 
 void USART_tx(char data){
     TXREG = data;
